@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #1a1a1a;
+    background: #0d1117;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -70,7 +70,7 @@ body {
 }
 
 .redirect-button {
-    background: #B8C25C;
+    background: #000000;
     color: white;
     border: none;
     padding: 1.2rem 3rem;
@@ -79,7 +79,7 @@ body {
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 8px 25px rgba(184, 194, 92, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     text-transform: none;
     letter-spacing: 0.5px;
     position: relative;
@@ -103,16 +103,16 @@ body {
 
 .redirect-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 35px rgba(184, 194, 92, 0.4);
-    background: #A4B34A;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+    background: #333333;
 }
 
 .redirect-button:active {
     transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(184, 194, 92, 0.3);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Glitter animation */
+/* Green dots background */
 body::before {
     content: '';
     position: absolute;
@@ -121,55 +121,43 @@ body::before {
     width: 100%;
     height: 100%;
     background-image: 
-        radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
-        radial-gradient(circle at 30% 30%, rgba(255, 215, 0, 0.7) 1px, transparent 1px),
-        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.9) 1px, transparent 1px),
-        radial-gradient(circle at 70% 70%, rgba(255, 215, 0, 0.6) 1px, transparent 1px),
-        radial-gradient(circle at 90% 90%, rgba(255, 255, 255, 0.8) 1px, transparent 1px);
-    background-size: 80px 80px, 120px 120px, 100px 100px, 140px 140px, 90px 90px;
-    animation: glitter 4s ease-in-out infinite;
+        radial-gradient(circle at 10% 10%, #00ff41 2px, transparent 2px),
+        radial-gradient(circle at 20% 20%, #00ff41 1px, transparent 1px),
+        radial-gradient(circle at 30% 30%, #00ff41 3px, transparent 3px),
+        radial-gradient(circle at 40% 40%, #00ff41 1px, transparent 1px),
+        radial-gradient(circle at 50% 50%, #00ff41 2px, transparent 2px),
+        radial-gradient(circle at 60% 60%, #00ff41 1px, transparent 1px),
+        radial-gradient(circle at 70% 70%, #00ff41 3px, transparent 3px),
+        radial-gradient(circle at 80% 80%, #00ff41 2px, transparent 2px),
+        radial-gradient(circle at 90% 90%, #00ff41 1px, transparent 1px),
+        radial-gradient(circle at 15% 15%, #00ff41 2px, transparent 2px),
+        radial-gradient(circle at 25% 25%, #00ff41 1px, transparent 1px),
+        radial-gradient(circle at 35% 35%, #00ff41 3px, transparent 3px),
+        radial-gradient(circle at 45% 45%, #00ff41 1px, transparent 1px),
+        radial-gradient(circle at 55% 55%, #00ff41 2px, transparent 2px),
+        radial-gradient(circle at 65% 65%, #00ff41 1px, transparent 1px),
+        radial-gradient(circle at 75% 75%, #00ff41 3px, transparent 3px),
+        radial-gradient(circle at 85% 85%, #00ff41 2px, transparent 2px),
+        radial-gradient(circle at 95% 95%, #00ff41 1px, transparent 1px);
+    background-size: 
+        100px 100px, 80px 80px, 120px 120px, 90px 90px, 110px 110px,
+        85px 85px, 130px 130px, 95px 95px, 75px 75px, 105px 105px,
+        88px 88px, 125px 125px, 92px 92px, 115px 115px, 82px 82px,
+        135px 135px, 98px 98px, 78px 78px;
+    animation: dotsFloat 10s ease-in-out infinite;
     pointer-events: none;
     z-index: 1;
+    opacity: 0.4;
 }
 
-@keyframes glitter {
-    0%, 100% {
-        opacity: 0.4;
-        transform: scale(1) rotate(0deg);
-    }
-    50% {
-        opacity: 0.7;
-        transform: scale(1.05) rotate(180deg);
-    }
-}
-
-/* Additional glitter elements */
-body::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.7) 2px, transparent 2px),
-        radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
-        radial-gradient(circle at 60% 60%, rgba(255, 215, 0, 0.6) 1px, transparent 1px),
-        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.9) 2px, transparent 2px);
-    background-size: 60px 60px, 100px 100px, 80px 80px, 110px 110px;
-    animation: glitter2 3s ease-in-out infinite reverse;
-    pointer-events: none;
-    z-index: 1;
-}
-
-@keyframes glitter2 {
+@keyframes dotsFloat {
     0%, 100% {
         opacity: 0.3;
-        transform: scale(1) rotate(0deg);
+        transform: scale(1);
     }
     50% {
         opacity: 0.6;
-        transform: scale(1.02) rotate(180deg);
+        transform: scale(1.1);
     }
 }
 
